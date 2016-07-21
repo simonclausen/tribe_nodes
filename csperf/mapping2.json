@@ -1,0 +1,151 @@
+{
+  "cs-haproxy": {
+    "properties": {
+      "@timestamp": {
+        "type": "date",
+        "format": "dateOptionalTime"
+      },
+      "@version": {
+        "type": "string"
+      },
+      "True-Client-IP": {
+        "type": "string"
+      },
+      "User-Agent": {
+        "type": "string"
+      },
+      "X_API_REF": {
+        "type": "string"
+      },
+      "accept_date": {
+        "type": "string"
+      },
+      "actconn": {
+        "type": "long"
+      },
+      "backend_name": {
+        "type": "string"
+      },
+      "backend_queue": {
+        "type": "long"
+      },
+      "beconn": {
+        "type": "long"
+      },
+      "bytes_read": {
+        "type": "long"
+      },
+      "captured_request_cookie": {
+        "type": "string"
+      },
+      "captured_response_cookie": {
+        "type": "string"
+      },
+      "doc_id": {
+        "type": "string"
+      },
+      "feconn": {
+        "type": "long"
+      },
+      "frontend_name": {
+        "type": "string"
+      },
+      "haproxy_hour": {
+        "type": "string"
+      },
+      "haproxy_milliseconds": {
+        "type": "string"
+      },
+      "haproxy_minute": {
+        "type": "string"
+      },
+      "haproxy_month": {
+        "type": "string"
+      },
+      "haproxy_monthday": {
+        "type": "string"
+      },
+      "haproxy_second": {
+        "type": "string"
+      },
+      "haproxy_time": {
+        "type": "string"
+      },
+      "haproxy_year": {
+        "type": "string"
+      },
+      "host": {
+        "type": "string"
+      },
+      "http_status_code": {
+        "type": "long"
+      },
+      "message": {
+        "type": "string"
+      },
+      "method": {
+        "type": "string"
+      },
+      "pid": {
+        "type": "long"
+      },
+      "program": {
+        "type": "string"
+      },
+      "protocol": {
+        "type": "string"
+      },
+      "retries": {
+        "type": "long"
+      },
+      "server_name": {
+        "type": "string"
+      },
+      "source_ip": {
+        "type": "string"
+      },
+      "srv_queue": {
+        "type": "long"
+      },
+      "srvconn": {
+        "type": "long"
+      },
+      "syslog_header": {
+        "type": "long"
+      },
+      "syslog_timestamp": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "string"
+      },
+      "termination_state": {
+        "type": "string"
+      },
+      "time_backend_connect": {
+        "type": "long"
+      },
+      "time_backend_response": {
+        "type": "long"
+      },
+      "time_duration": {
+        "type": "long"
+      },
+      "time_queue": {
+        "type": "long"
+      },
+      "time_request": {
+        "type": "long"
+      },
+      "type": {
+        "type": "string"
+      },
+      "urihost": {
+        "type": "string"
+      },
+      "uripathparam": {
+        "type": "string"
+      }
+    }
+  }
+}

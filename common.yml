@@ -1,0 +1,39 @@
+version: '2'
+services:
+  client:
+      build: elastic
+      volumes:
+          - ./data:/data
+          - ./config:/config
+          - ./logs:/logs
+          - ./backups:/backups
+      command: ./elasticsearch --network.host _non_loopback_ --node.client true
+
+
+  tribe:
+      build: elastic
+      volumes:
+          - ./data:/data
+          - ./tribeconfig:/config
+          - ./logs:/logs
+          - ./backups:/backups
+      command: ./elasticsearch --network.host _non_loopback_ 
+
+
+
+  data:
+      build: elastic
+      volumes:
+          - ./data:/data
+          - ./config:/config
+          - ./logs:/logs
+          - ./backups:/backups
+
+  master:
+      build: elastic
+      volumes:
+          - ./data:/data
+          - ./config:/config
+          - ./logs:/logs
+          - ./backups:/backups
+      command: ./elasticsearch --node.data false --node.master true

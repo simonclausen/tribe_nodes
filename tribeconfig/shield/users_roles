@@ -1,0 +1,9 @@
+marvel_user:marvel_user
+role1:esuer1
+marvel_agent:marvel_export
+role2:esuer2
+role3:esuer3
+admin:es_admin
+kibana4_server:kibana4-server
+transport_client:es_admin
+kibana4:kibana

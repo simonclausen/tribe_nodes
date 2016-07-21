@@ -1,0 +1,93 @@
+#main ES cluster
+version: '2'
+services:
+   
+  es1:
+    container_name: es1
+    extends:
+      file: common.yml
+      service: data
+    ports:
+      - 9201:9200
+      - 9301:9300
+    command: ./elasticsearch  --network.host _non_loopback_ --cluster.name  es1
+
+  es2:
+    container_name: es2
+    extends:
+      file: common.yml
+      service: data
+    ports:
+      - 9202:9200
+      - 9302:9300
+    command: ./elasticsearch  --network.host _non_loopback_ --cluster.name  es2
+
+
+
+  tribe:
+    container_name: tribe
+    extends:
+      file: common.yml
+      service: tribe
+    ports:
+      - 9200:9200
+      - 9300:9300
+
+
+  marvel:
+    container_name: marvel
+    extends:
+      file: common.yml
+      service: data
+    ports:
+      - 9203:9200
+    command: ./elasticsearch --marvel.agent.interval -1  --cluster.name marvel --network.host _non_loopback_ 
+
+
+  kibana_marvel:
+      build: kibana
+      volumes:
+          - ./data:/data
+          - ./config:/config
+          - ./logs:/logs
+      ports:
+        - 5602:5601
+      command: /opt/kibana/bin/kibana --config /config/kibana-marvel.yml
+  
+
+
+  kibana_tribe:
+    build: kibana
+    volumes:
+      - ./data:/data
+      - ./config:/config
+      - ./logs:/logs
+    ports:
+      - 5603:5601
+    command: sh -c "sleep 30;/opt/kibana/bin/kibana --config /config/kibana.yml -e http://tribe:9200"
+ 
+    
+    
+  # kibana_es1:
+  #   build: kibana
+  #   volumes:
+  #     - ./data:/data
+  #     - ./config:/config
+  #     - ./logs:/logs
+  #   ports:
+  #     - 5601:5601
+  #   command: sh -c "sleep 30;/opt/kibana/bin/kibana --config /config/kibana.yml -e http://es1:9200"
+    
+  
+  # kibana_es2:
+  #   build: kibana
+  #   volumes:
+  #     - ./data:/data
+  #     - ./config:/config
+  #     - ./logs:/logs
+  #   ports:
+  #     - 5602:5601
+  #   command: sh -c "sleep 30;/opt/kibana/bin/kibana --config /config/kibana.yml -e http://es2:9200"
+  #  
+    
+     
