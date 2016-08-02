@@ -1,8 +1,10 @@
+role1:user1
 marvel_user:marvel_user
-role1:esuer1
+rolea:user3
 marvel_agent:marvel_export
-role2:esuer2
-role3:esuer3
+role5:user5
+role2:user1,user2
+rolex:user4
 admin:es_admin
 kibana4_server:kibana4-server
 transport_client:es_admin
